@@ -4,6 +4,7 @@ console.log("js is working");
 const squares = document.querySelectorAll('#gamePanel div');
 const resetBtn = document.querySelector('#resetBtn');
 let player = document.querySelector(".playerName");
+let winnerPlayer = document.querySelector(".winner");
 
 //create an array of  all squares values 
 let squaresArray = Array.from(squares);
@@ -39,6 +40,7 @@ function cellClick(event) {
 
     console.log("the value of board is" + board);
 
+
     //logic to give another player a turn
     // let turn = 'X';
     if (turn === 'X') {
@@ -56,12 +58,55 @@ function cellClick(event) {
         event.target.style.backgroundColor = "red";
     };
 
-
+    findWinner();
 }; //end of cellClick function
+
+let winner;
+function findWinner() {
+    if ((board[0] === board[1]) && (board[1] === board[2])) {  //first row
+        winner = board[0];
+        console.log("winner", winner);
+    } else if ((board[3] === board[4]) && (board[4] === board[5])) { //second row
+        winner = board[3];
+        console.log("winner", winner);
+    } else if ((board[6] === board[7]) && (board[7] === board[8])) { //third row
+        winner = board[6];
+        console.log("winner", winner);
+    }
+    else if ((board[0] === board[3]) && (board[3] === board[6])) { //first column
+        winner = board[0];
+        console.log("winner", winner);
+    }
+    else if ((board[1] === board[4]) && (board[7] === board[7])) { //second column
+        winner = board[1];
+        console.log("winner", winner);
+    }
+    else if ((board[2] === board[5]) && (board[7] === board[8])) { //third column
+        winner = board[2];
+        console.log("winner", winner);
+    }
+    else if ((board[0] === board[4]) && (board[4] === board[8])) { //diagonal
+        winner = board[0];
+        console.log("winner", winner);
+    }
+    else if ((board[2] === board[4]) && (board[4] === board[6])) { //diagonal
+        winner = board[2];
+        console.log("winner", winner);
+    } else {
+        console.log("its a tie - no winner");
+        winner = "Its a tie - no winner";
+
+    }
+
+    winnerPlayer.textContent = winner;
+    return winner;
+    //return alert(`winner is ${winner}`);
+}
 
 function reset() {
     alert("are you sure for a new game?");
     location.reload();
+
 
 }
 
