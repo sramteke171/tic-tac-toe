@@ -57,56 +57,42 @@ function cellClick(event) {
         //change color of selected cell/Div to RED
         event.target.style.backgroundColor = "red";
     };
-
     findWinner();
 }; //end of cellClick function
 
 let winner;
+let winFlag = null;
+
 function findWinner() {
     if ((board[0] === board[1]) && (board[1] === board[2])) {  //first row
         winner = board[0];
-        console.log("winner", winner);
     } else if ((board[3] === board[4]) && (board[4] === board[5])) { //second row
         winner = board[3];
-        console.log("winner", winner);
     } else if ((board[6] === board[7]) && (board[7] === board[8])) { //third row
         winner = board[6];
-        console.log("winner", winner);
-    }
-    else if ((board[0] === board[3]) && (board[3] === board[6])) { //first column
+    } else if ((board[0] === board[3]) && (board[3] === board[6])) { //first column
         winner = board[0];
-        console.log("winner", winner);
-    }
-    else if ((board[1] === board[4]) && (board[7] === board[7])) { //second column
+    } else if ((board[1] === board[4]) && (board[4] === board[7])) { //second column
         winner = board[1];
-        console.log("winner", winner);
-    }
-    else if ((board[2] === board[5]) && (board[7] === board[8])) { //third column
+    } else if ((board[2] === board[5]) && (board[5] === board[8])) { //third column
         winner = board[2];
-        console.log("winner", winner);
-    }
-    else if ((board[0] === board[4]) && (board[4] === board[8])) { //diagonal
+    } else if ((board[0] === board[4]) && (board[4] === board[8])) { //diagonal
         winner = board[0];
-        console.log("winner", winner);
-    }
-    else if ((board[2] === board[4]) && (board[4] === board[6])) { //diagonal
+    } else if ((board[2] === board[4]) && (board[4] === board[6])) { //diagonal
         winner = board[2];
-        console.log("winner", winner);
+    } else if (board.includes('')) {  //if cells are empty then no winner
+        winner = null;
     } else {
-        console.log("its a tie - no winner");
-        winner = "Its a tie - no winner";
-
+        winner = "It's a tie - NoWinner"; //its a tie if cell is not null
     }
 
-    winnerPlayer.textContent = winner;
-    return winner;
-    //return alert(`winner is ${winner}`);
+    winnerPlayer.textContent = winner; //display winner on html
+
 }
 
 function reset() {
     alert("are you sure for a new game?");
     location.reload();
-
 
 }
 
