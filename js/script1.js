@@ -1,12 +1,17 @@
 
+alert("are you sure for a new game?");
 
+//reset name of player
+player.textContent = "";
 
+const squares1 = document.querySelectorAll('#gamePanel div');
+console.log(`sqaures   ${squares1}`);
 
-
-
-
-
-
+squares.style.backgroundColor = "white";
+document.getElementById('#gamePanel div').style.background = "orange";
+    // const divColor = squares1.style.backgroundColor;
+    // console.log(divColor);
+    // squares1.style.textContent = "";
 
 
 //const squares = Array.from(document.querySelectorAll('#board div'));
