@@ -1,0 +1,53 @@
+body {
+    background-color: bisque;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    
+   
+    .game {
+    /* display property to use flex-box*/
+    display: flex;
+    /* centers the game container horizontally */
+    justify-content: center;
+    /* this centers content vertically */
+    align-items: center;
+    /* aligns the childs(resetBtn) in columns rather than rows */
+    }
+    .columns {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    }
+
+    /* game container to drop down when it reaches max-width */
+    .flex-columns {   
+    flex-wrap: wrap;
+    /* height puts the space between 3 rows */
+    height: 440px;
+    width: 500px;
+    }
+
+    /* style squares */
+    .squareBox {
+    /* border: 2px solid rgba(0, 0, 0, .75); */
+    border: 3px solid rgb(39, 110, 71); 
+    height: 140px;
+    width: 140px;
+    }
+
+    /* style reset button */
+    #resetBtn {
+    text-align: center;
+    font-size: 20px;
+    border: 3px solid blue;
+    height: 75px;
+    width: 100px;
+    margin: 30px;
+    }
+
+    h2 {
+        margin: 0 auto;
+        font-size: 35px;
+        margin: 10px;
+        }
