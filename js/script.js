@@ -1,7 +1,6 @@
-console.log("js is working");
-
 //get values of all div/square by using parent div 'panel'
 const squares = document.querySelectorAll('#gamePanel div');
+const squareBoxes = document.querySelectorAll(".squareBox");
 const resetBtn = document.querySelector('#resetBtn');
 let player = document.querySelector(".playerName");
 let winnerPlayer = document.querySelector(".winner");
@@ -92,24 +91,13 @@ function findWinner() {
 function reset() {
     alert("are you sure for a new game?");
     location.reload();
-
-    // board.forEach((str) => {
-    //     //str.event.target.style.backgroundColor = "white";
-    //     board = [
-    //         '', '', '',
-    //         '', '', '',
-    //         '', '', ''
-    //     ];
-    // });
-    // player.textContent = "";
-    // winnerPlayer.textContent = "";
-
+    player.textContent = "";
+    winnerPlayer.textContent = "";
 }
 
 //add eventListener for each cell/Div
 document.getElementById('gamePanel').addEventListener('click', cellClick);
 resetBtn.addEventListener("click", reset);
-
 
 
 
