@@ -61,7 +61,6 @@ function cellClick(event) {
 }; //end of cellClick function
 
 let winner;
-let winFlag = null;
 
 function findWinner() {
     if ((board[0] === board[1]) && (board[1] === board[2])) {  //first row
@@ -83,7 +82,7 @@ function findWinner() {
     } else if (board.includes('')) {  //if cells are empty then no winner
         winner = null;
     } else {
-        winner = "It's a tie - NoWinner"; //its a tie if cell is not null
+        winner = "It's a tie - NoWinner"; //its a tie if all above conditions in if-else-if not met
     }
 
     winnerPlayer.textContent = winner; //display winner on html
@@ -93,6 +92,17 @@ function findWinner() {
 function reset() {
     alert("are you sure for a new game?");
     location.reload();
+
+    // board.forEach((str) => {
+    //     //str.event.target.style.backgroundColor = "white";
+    //     board = [
+    //         '', '', '',
+    //         '', '', '',
+    //         '', '', ''
+    //     ];
+    // });
+    // player.textContent = "";
+    // winnerPlayer.textContent = "";
 
 }
 
